@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ coin.name }} - Crypto Tracker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #eee;
+        font-family: 'Poppins', sans-serif;
+        padding: 20px;
+        margin: 0;
+        min-height: 100vh;
+    }
+    a {
+        color: #00d8ff;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    h1 {
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #00d8ff;
+    }
+    .coin-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .coin-header img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(0, 216, 255, 0.5);
+    }
+    .info-box {
+        background-color: #1e2a38;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 20px;
+        box-shadow: 0 0 20px rgba(0, 216, 255, 0.3);
+    }
+    .info-box p {
+        margin-bottom: 8px;
+        font-size: 1.1em;
+    }
+    .info-box strong {
+        color: #00d8ff;
+    }
+    #chart-container {
+        background-color: #1e2a38;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 30px;
+        box-shadow: 0 0 20px rgba(0, 216, 255, 0.3);
+    }
+    #description-box {
+        background-color: #1e2a38;
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 30px;
+        box-shadow: 0 0 20px rgba(0, 216, 255, 0.3);
+    }
+    #description-box h2 {
+        color: #00d8ff;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    #description-box p {
+        line-height: 1.6;
+        font-size: 1em;
+    }
+    #description-box a {
+        color: #00d8ff;
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+</style>
+</head>
+<body>
+
+<a href="/">← Ana Sayfaya Geri Dön</a>
+
+<div class="coin-header">
+    <img src="{{ coin.image.small }}" alt="{{ coin.name }} Logo" />
+    <h1>{{ coin.name }} ({{ coin.symbol.upper() }})</h1>
+</div>
+
+<div class="info-box">
